@@ -7,6 +7,8 @@ import TodoLists from './TodoLists';
 const TodoFormContainer = () => {
   const [todoItem, setTodoItem] = useState([]);
 
+  let isTodoEmpty = true;
+
   const addTodoHandler = todo => {
     setTodoItem(prevState => {
       return [
@@ -18,10 +20,16 @@ const TodoFormContainer = () => {
       ];
     });
   };
+
+  if (todoItem.length > 0) {
+    isTodoEmpty = false;
+  }
+
   return (
     <div className={classes.container}>
       <TodoForm onAddTodo={addTodoHandler} />
-      <TodoLists newTodo={todoItem} />
+      {!isTodoEmpty && <TodoLists newTodo={todoItem} />}
+      {isTodoEmpty && <p className={classes.default}>Add a task to do...</p>}
     </div>
   );
 };

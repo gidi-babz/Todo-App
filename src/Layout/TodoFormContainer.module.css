@@ -4,3 +4,12 @@
   padding: 3.2rem;
   background-color: #fff;
 }
+
+.default {
+  text-align: center;
+  padding: 4.8rem;
+  font-size: 3rem;
+  background-color: #eee;
+  color: #555;
+  border-radius: 5px;
+}
