@@ -1,20 +1,18 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 
 import classes from './TodoForm.module.css';
 
-const TodoForm = () => {
-  const [todoInput, setTodoInput] = useState([]);
+const TodoForm = props => {
   const enteredTodo = useRef();
 
   const submitHandler = e => {
     e.preventDefault();
 
-    const enteredTodoValue = enteredTodo.current.value;
+    let enteredTodoValue = enteredTodo.current.value;
 
-    setTodoInput(prevState => prevState.push({ enteredTodoValue }));
+    props.onAddTodo(enteredTodoValue);
 
-    console.log(todoInput);
-    // return todoInput;
+    enteredTodo.current.value = '';
   };
 
   return (
