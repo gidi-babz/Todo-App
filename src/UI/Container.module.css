@@ -1,12 +1,16 @@
 .container {
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  min-height: 70rem;
-  overflow: hidden;
-  min-width: 60rem;
   margin-top: 4.8rem;
   margin-bottom: 2.4rem;
   padding: 3.2rem;
   background-color: #fff;
 }
+
+/* main {
+  display: flex;
+  flex-direction: row;
+  gap: 3.2rem;
+  align-items: flex-start;
+} */
