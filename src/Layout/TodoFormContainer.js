@@ -28,7 +28,7 @@ const TodoFormContainer = () => {
   return (
     <div className={classes.container}>
       <TodoForm onAddTodo={addTodoHandler} />
-      {!isTodoEmpty && <TodoLists newTodo={todoItem} />}
+      {!isTodoEmpty && <TodoLists newTodo={todoItem} onDelete={setTodoItem} />}
       {isTodoEmpty && <p className={classes.default}>Add a task to do...</p>}
     </div>
   );
