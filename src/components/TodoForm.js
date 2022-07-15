@@ -5,12 +5,14 @@ import classes from './TodoForm.module.css';
 const TodoForm = props => {
   const enteredTodo = useRef();
 
+  const { onAddTodo } = props;
+
   const submitHandler = e => {
     e.preventDefault();
 
-    let enteredTodoValue = enteredTodo.current.value;
+    const enteredTodoValue = enteredTodo.current.value;
 
-    props.onAddTodo(enteredTodoValue);
+    onAddTodo(enteredTodoValue[0].toUpperCase() + enteredTodoValue.slice(1));
 
     enteredTodo.current.value = '';
   };
